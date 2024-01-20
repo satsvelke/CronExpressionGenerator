@@ -6,15 +6,19 @@
   <Version>1.0.0</Version>
   <Authors>Satsvelke</Authors>
   <Description>The CronExpression class in the Sats.CronExpressionGenerator namespace provides a simple and flexible way to generate cron expressions for scheduling tasks at specified intervals and times. This generator is particularly useful for configuring cron jobs in applications.</Description>
-  <PackageProjectUrl>https://yourprojecturl.com</PackageProjectUrl>
-  <RepositoryUrl>https://yourrepositoryurl.com</RepositoryUrl>
+  <PackageProjectUrl>https://github.com/satsvelke/CronExpressionGenerator</PackageProjectUrl>
+  <RepositoryUrl>https://github.com/satsvelke/CronExpressionGenerator</RepositoryUrl>
   <RepositoryType>git</RepositoryType>
   <PackageLicenseExpression>MIT</PackageLicenseExpression>
-
+  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   <!-- Include readme in the package -->
-  <PackageReadmeFile>readme.md</PackageReadmeFile>
+  <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
-
-  
+  <ItemGroup>
+  <Content Include="Readme.md">
+    <Pack>true</Pack>
+    <PackagePath>\</PackagePath>
+  </Content>
+</ItemGroup>
 
 </Project>
