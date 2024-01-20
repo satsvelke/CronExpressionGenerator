@@ -1,3 +1,7 @@
+
+[![NuGet](https://img.shields.io/nuget/v/Sats.CronExpressionGenerator)](https://www.nuget.org/packages/Sats.CronExpressionGenerator/)
+
+
 # Cron Expression Generator
 
 The `CronExpression` class in the `Sats.CronExpressionGenerator` namespace provides a simple and flexible way to generate cron expressions for scheduling tasks at specified intervals and times. This generator is particularly useful for configuring cron jobs in applications.
