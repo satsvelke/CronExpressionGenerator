@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sats.CronExpressionGenerato
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sats.CronExpressionGenerator.Tests", "Sats.CronExpressionGenerator.Tests\Sats.CronExpressionGenerator.Tests.csproj", "{27E7CCFD-9532-43FB-BE6B-D2C62BE41ED4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CronConsole", "CronConsole\CronConsole.csproj", "{F3D33BE4-8611-4D89-A100-EE963F00E57D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{27E7CCFD-9532-43FB-BE6B-D2C62BE41ED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27E7CCFD-9532-43FB-BE6B-D2C62BE41ED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27E7CCFD-9532-43FB-BE6B-D2C62BE41ED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3D33BE4-8611-4D89-A100-EE963F00E57D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3D33BE4-8611-4D89-A100-EE963F00E57D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3D33BE4-8611-4D89-A100-EE963F00E57D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3D33BE4-8611-4D89-A100-EE963F00E57D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
