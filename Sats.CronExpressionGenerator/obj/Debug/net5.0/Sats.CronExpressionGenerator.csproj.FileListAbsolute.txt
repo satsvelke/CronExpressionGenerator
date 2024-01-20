@@ -1,0 +1,11 @@
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/Sats.CronExpressionGenerator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/Sats.CronExpressionGenerator.AssemblyInfoInputs.cache
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/Sats.CronExpressionGenerator.AssemblyInfo.cs
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/Sats.CronExpressionGenerator.csproj.CoreCompileInputs.cache
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/bin/Debug/net5.0/Sats.CronExpressionGenerator.deps.json
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/bin/Debug/net5.0/Sats.CronExpressionGenerator.dll
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/bin/Debug/net5.0/Sats.CronExpressionGenerator.pdb
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/Sats.CronExpressionGenerator.dll
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/refint/Sats.CronExpressionGenerator.dll
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/Sats.CronExpressionGenerator.pdb
+/Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/obj/Debug/net5.0/ref/Sats.CronExpressionGenerator.dll

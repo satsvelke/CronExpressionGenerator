@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Sats.CronExpressionGenerator
+build_property.ProjectDir = /Users/montmorency/Projects/CronGenerator/Sats.CronExpressionGenerator/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

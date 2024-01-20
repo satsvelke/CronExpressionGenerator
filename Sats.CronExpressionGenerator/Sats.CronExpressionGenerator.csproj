@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net5.0;net6.0;net7.0;net8.0</TargetFrameworks>
+    <PackageId>Sats.CronExpressionGenerator</PackageId>
+  <Version>1.0.0</Version>
+  <Authors>Satsvelke</Authors>
+  <Description>The CronExpression class in the Sats.CronExpressionGenerator namespace provides a simple and flexible way to generate cron expressions for scheduling tasks at specified intervals and times. This generator is particularly useful for configuring cron jobs in applications.</Description>
+  <PackageProjectUrl>https://yourprojecturl.com</PackageProjectUrl>
+  <RepositoryUrl>https://yourrepositoryurl.com</RepositoryUrl>
+  <RepositoryType>git</RepositoryType>
+  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+  <!-- Include readme in the package -->
+  <PackageReadmeFile>readme.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  
+
+</Project>
