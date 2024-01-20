@@ -105,8 +105,4 @@ When specifying weekdays in the methods that involve weekdays, use the integers 
 var cronExpression = CronExpression.DailyAt(15, new TimeSpan(8, 0, 0), new TimeSpan(17, 0, 0), new int[] { 1, 3 });
 ```
 
-## Important Note
 
-Make sure to include appropriate error handling for invalid inputs, as specified by the `ValidateMinutes` action in the `CronExpression` class.
-
-Feel free to adapt and integrate this cron expression generator into your projects to streamline task scheduling.
