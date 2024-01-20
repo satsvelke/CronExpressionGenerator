@@ -14,11 +14,5 @@
   <!-- Include readme in the package -->
   <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
-  <ItemGroup>
-  <Content Include="Readme.md">
-    <Pack>true</Pack>
-    <PackagePath>\</PackagePath>
-  </Content>
-</ItemGroup>
 
 </Project>
