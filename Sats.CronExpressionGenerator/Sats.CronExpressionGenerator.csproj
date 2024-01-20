@@ -15,4 +15,10 @@
   <PackageReadmeFile>Readme.md</PackageReadmeFile>
   </PropertyGroup>
 
+
+  <ItemGroup>
+  <None Include="Readme.md" pack="true" PackagePath="." />
+</ItemGroup>
+
 </Project>
+
