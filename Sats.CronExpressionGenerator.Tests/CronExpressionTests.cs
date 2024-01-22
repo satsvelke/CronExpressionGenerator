@@ -9,10 +9,12 @@ namespace Sats.CronExpressionGenerator.Tests
         [TestCase(15, ExpectedResult = "*/15 * * * *")]
         [TestCase(30, ExpectedResult = "*/30 * * * *")]
         [TestCase(60, ExpectedResult = "*/60 * * * *")]
-        public string DailyAt_ShouldGenerateCorrectExpression(int minutes)
+        [TestCase(0, ExpectedResult = "* * * * *")]
+
+        public string EveryMinuteAt_ShouldGenerateCorrectExpression(int minutes)
         {
             var k =
-             CronExpression.DailyAt(minutes);
+             CronExpression.EveryMinuteAt(minutes);
 
             Console.WriteLine(k);
 
@@ -21,10 +23,10 @@ namespace Sats.CronExpressionGenerator.Tests
 
         [TestCase(15, "08:30", ExpectedResult = "30-59/15 8-23 * * *")]
         [TestCase(30, "12:45", ExpectedResult = "45-59/30 12-23 * * *")]
-        public string DailyAtWithStartTime_ShouldGenerateCorrectExpression(int minutes, string startTime)
+        public string EveryMinuteAtWithStartTime_ShouldGenerateCorrectExpression(int minutes, string startTime)
         {
             TimeSpan startTimeSpan = TimeSpan.Parse(startTime);
-            var k = CronExpression.DailyAt(minutes, startTimeSpan);
+            var k = CronExpression.EveryMinuteAt(minutes, startTimeSpan);
 
             Console.WriteLine(k);
             return k;
@@ -32,27 +34,27 @@ namespace Sats.CronExpressionGenerator.Tests
 
         [TestCase(15, "08:30", "17:45", ExpectedResult = "30-45/15 8-17 * * *")]
         [TestCase(30, "12:45", "18:30", ExpectedResult = "45-30/30 12-18 * * *")]
-        public string DailyAtWithTimeRange_ShouldGenerateCorrectExpression(int minutes, string startTime, string endTime)
+        public string EveryMinuteAtWithTimeRange_ShouldGenerateCorrectExpression(int minutes, string startTime, string endTime)
         {
             TimeSpan startTimeSpan = TimeSpan.Parse(startTime);
             TimeSpan endTimeSpan = TimeSpan.Parse(endTime);
-            return CronExpression.DailyAt(minutes, startTimeSpan, endTimeSpan);
+            return CronExpression.EveryMinuteAt(minutes, startTimeSpan, endTimeSpan);
         }
 
         [TestCase(15, "08:30", "17:45", new[] { 1, 3, 5 }, ExpectedResult = "30-45/15 8-17 * * 1-5")]
         [TestCase(30, "12:45", "18:30", new[] { 2, 4 }, ExpectedResult = "45-30/30 12-18 * * 2-4")]
-        public string DailyAtWithTimeRangeAndWeekDays_ShouldGenerateCorrectExpression(int minutes, string startTime, string endTime, int[] weekDays)
+        public string EveryMinuteAtWithTimeRangeAndWeekDays_ShouldGenerateCorrectExpression(int minutes, string startTime, string endTime, int[] weekDays)
         {
             TimeSpan startTimeSpan = TimeSpan.Parse(startTime);
             TimeSpan endTimeSpan = TimeSpan.Parse(endTime);
-            return CronExpression.DailyAt(minutes, startTimeSpan, endTimeSpan, weekDays);
+            return CronExpression.EveryMinuteAt(minutes, startTimeSpan, endTimeSpan, weekDays);
         }
 
         [TestCase(15, new[] { 1, 3, 5 }, ExpectedResult = "*/15 * * * 1-5")]
         [TestCase(30, new[] { 2, 4 }, ExpectedResult = "*/30 * * * 2-4")]
-        public string DailyAtWithWeekDays_ShouldGenerateCorrectExpression(int minutes, int[] weekDays)
+        public string EveryMinuteAtWithWeekDays_ShouldGenerateCorrectExpression(int minutes, int[] weekDays)
         {
-            return CronExpression.DailyAt(minutes, weekDays);
+            return CronExpression.EveryMinuteAt(minutes, weekDays);
         }
 
         [TestCase("08:30", ExpectedResult = "30 8 * * *")]
@@ -92,11 +94,11 @@ namespace Sats.CronExpressionGenerator.Tests
         [TestCase(5, "10:15", "18:30", new[] { 2, 4, 6 }, ExpectedResult = "15-30/5 10-18 * * 2-6")]
         [TestCase(60, "12:00", "15:00", new[] { 1, 7 }, ExpectedResult = "0-0/60 12-15 * * 1-7")]
 
-        public string DailyAtWithTimeRangeAndWeekDays_AdditionalCases(int minutes, string startTime, string endTime, int[] weekDays)
+        public string EveryMinuteAtWithTimeRangeAndWeekDays_AdditionalCases(int minutes, string startTime, string endTime, int[] weekDays)
         {
             TimeSpan startTimeSpan = TimeSpan.Parse(startTime);
             TimeSpan endTimeSpan = TimeSpan.Parse(endTime);
-            return CronExpression.DailyAt(minutes, startTimeSpan, endTimeSpan, weekDays);
+            return CronExpression.EveryMinuteAt(minutes, startTimeSpan, endTimeSpan, weekDays);
         }
 
         [TestCase("09:15", new[] { 1, 2, 4 }, ExpectedResult = "15 9 * * 1-4")]
@@ -119,18 +121,20 @@ namespace Sats.CronExpressionGenerator.Tests
 
 
         [Test]
-        public void DailyAt_InvalidMinutes_ShouldThrowArgumentException()
+        public void EveryMinuteAt_InvalidMinutes_ShouldThrowArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => CronExpression.DailyAt(75));
+            Assert.Throws<ArgumentException>(() => CronExpression.EveryMinuteAt(75));
         }
 
         [TestCase(75, new[] { 1, 3, 5 })]
         [TestCase(90, new[] { 2, 4 })]
         [TestCase(120, new[] { 6, 7 })]
-        public void DailyAtWithWeekDays_InvalidMinutes_ShouldThrowArgumentException(int minutes, int[] weekDays)
+        public void EveryMinuteAtWithWeekDays_InvalidMinutes_ShouldThrowArgumentException(int minutes, int[] weekDays)
         {
-            Assert.Throws<ArgumentException>(() => CronExpression.DailyAt(minutes, weekDays));
+            Assert.Throws<ArgumentException>(() => CronExpression.EveryMinuteAt(minutes, weekDays));
         }
+
+
     }
 }
 

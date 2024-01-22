@@ -12,10 +12,11 @@ namespace Sats.CronExpressionGenerator
         /// </summary>
         /// <param name="minutes">The interval in minutes.</param>
         /// <returns>A cron expression for the specified interval.</returns>
-        public static string DailyAt(int minutes)
+        public static string EveryMinuteAt(int minutes)
         {
             ValidateMinutes(minutes);
-            return $"*/{minutes} * * * *";
+            var expression = minutes == 0 ? "*" : $"*/{minutes}";
+            return $"{expression} * * * *";
         }
 
 
@@ -28,7 +29,7 @@ namespace Sats.CronExpressionGenerator
         /// <param name="minutes">The interval in minutes.</param>
         /// <param name="startTime">The starting time of day.</param>
         /// <returns>A cron expression for the specified interval and start time.</returns>
-        public static string DailyAt(int minutes, TimeSpan startTime)
+        public static string EveryMinuteAt(int minutes, TimeSpan startTime)
         {
             ValidateMinutes(minutes);
             return $"{startTime.Minutes}-59/{minutes} {startTime.Hours}-23 * * *";
@@ -42,7 +43,7 @@ namespace Sats.CronExpressionGenerator
         /// <param name="startTime">The starting time of day.</param>
         /// <param name="endTime">The ending time of day.</param>
         /// <returns>A cron expression for the specified interval and time range.</returns>
-        public static string DailyAt(int minutes, TimeSpan startTime, TimeSpan endTime)
+        public static string EveryMinuteAt(int minutes, TimeSpan startTime, TimeSpan endTime)
         {
             ValidateMinutes(minutes);
 
@@ -62,7 +63,7 @@ namespace Sats.CronExpressionGenerator
         /// <param name="endTime">The ending time of day.</param>
         /// <param name="weekDays">An array of integers representing days of the week (1-7).</param>
         /// <returns>A cron expression for the specified interval, time range, and days of the week.</returns>
-        public static string DailyAt(int minutes, TimeSpan startTime, TimeSpan endTime, int[] weekDays)
+        public static string EveryMinuteAt(int minutes, TimeSpan startTime, TimeSpan endTime, int[] weekDays)
         {
             ValidateMinutes(minutes);
 
@@ -79,7 +80,7 @@ namespace Sats.CronExpressionGenerator
         /// <param name="minutes">The interval in minutes.</param>
         /// <param name="weekDays">An array of integers representing days of the week (1-7).</param>
         /// <returns>A cron expression for the specified interval and days of the week.</returns>
-        public static string DailyAt(int minutes, int[] weekDays)
+        public static string EveryMinuteAt(int minutes, int[] weekDays)
         {
             ValidateMinutes(minutes);
 
@@ -98,7 +99,7 @@ namespace Sats.CronExpressionGenerator
         /// <param name="startTime">The starting time of day.</param>
         /// <param name="weekDays">An array of integers representing days of the week (1-7).</param>
         /// <returns>A cron expression for the specified interval, time range, and days of the week.</returns>
-        public static string DailyAt(int minutes, TimeSpan startTime, int[] weekDays)
+        public static string EveryMinuteAt(int minutes, TimeSpan startTime, int[] weekDays)
         {
             ValidateMinutes(minutes);
 
@@ -165,5 +166,21 @@ namespace Sats.CronExpressionGenerator
         {
             if (minutes > 60) throw new ArgumentException("minutes should not be greater than 60");
         };
+
+        private static void ValidateTimeRange(TimeSpan startTime, TimeSpan endTime)
+        {
+            if (startTime > endTime)
+            {
+                throw new ArgumentException("startTime should be less than or equal to endTime");
+            }
+        }
+
+        private static void ValidateWeekDays(int[] weekDays)
+        {
+            if (weekDays == null || weekDays.Length == 0 || weekDays.Any(day => day < 1 || day > 7))
+            {
+                throw new ArgumentException("Invalid weekDays array");
+            }
+        }
     }
 }
